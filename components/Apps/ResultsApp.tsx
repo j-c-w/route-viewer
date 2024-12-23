@@ -5,6 +5,7 @@ import { TokenRefresh } from "./TokenRefresh";
 import { TokenExchange } from "./TokenExchange";
 
 export const ResultsApp: React.ComponentType = () => {
+	console.log("In Results app");
     const { authState } = useAuthStateContext();
 
     switch (authState) {

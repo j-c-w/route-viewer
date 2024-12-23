@@ -203,8 +203,14 @@ function determineRiderOfTheDay(resultsByRider: Record<string, RiderStats>) {
 function determineClubXoms(results: RideEfforts) {
     for (const segmentId of results.segmentsInOrder) {
         const segment: RideSegment = results.segments[segmentId];
-        const clubXomMan = segment.clubXoms.men[0].segment_effort_id;
-        const clubXomWoman = segment.clubXoms.women[0].segment_effort_id;
+		var clubXomMan = "noXom";
+		if (segment.clubXoms.men.length > 0) {
+			clubXomMan = segment.clubXoms.men[0].segment_effort_id;
+		}
+		var clubXomWoman = "noXom";
+		if (segment.clubXoms.women.length > 0) {
+			clubXomWoman = segment.clubXoms.women[0].segment_effort_id;
+		}
 
         for (const effort of segment.efforts.men) {
             if (clubXomMan === effort.segment_effort_id) {
@@ -349,6 +355,7 @@ function determineGC(results: RideEfforts) {
 }
 
 export function resultsConverter(results: RideEfforts): TalliedRideEfforts {
+	console.log(JSON.stringify(results, null, 2));
     determineClubXoms(results);
 
     const prs = listPRs(results);

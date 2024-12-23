@@ -9,10 +9,11 @@ const queryOptions = {
 };
 
 export function useResultsData(resultsName: string) {
-    const url = `${S3_BUCKET}rides/${resultsName}.json`;
+    const url = `http://localhost:3000/rides/${resultsName}.json`;
+	console.log('data url is ' + url);
 
     return useQuery<RideEfforts, Error>(
-        "results-from-s3",
+        "results-from-public",
         () => fetch(url).then((res) => res.json()),
         queryOptions
     );

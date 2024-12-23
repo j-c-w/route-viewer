@@ -7,9 +7,15 @@ import { AuthStateProvider } from "../../contexts/AuthState";
 import { ResultsDataProvider } from "../../contexts/ResultsData";
 import { UnitsProvider } from "../../contexts/Units";
 
+import { useRouter } from 'next/router';
+
 const queryClient = new QueryClient();
 
 const Results: NextPage = () => {
+  const router = useRouter();
+  const { resultsName } = router.query;
+
+	console.log("Building Results for " + resultsName);
     return (
         <QueryClientProvider client={queryClient}>
             <APITokenProvider>

@@ -82,11 +82,21 @@ export const SegmentView: React.ComponentType<
                 <span>Club:</span>
                 <span>
                     <KOMIcon style={{ height: 19, fill: "#ccc" }} /> KOM{" "}
-                    {secondsToMinutes(clubXoms.men[0].elapsed_time)}
+                    {
+						(clubXoms.men.length > 0) && secondsToMinutes(clubXoms.men[0].elapsed_time)
+					}
+					{
+						(clubXoms.men.length == 0) && "N/A"
+					}
                 </span>
                 <span>
                     <QOMIcon style={{ height: 19, fill: "#ccc" }} /> QOM{" "}
-                    {secondsToMinutes(clubXoms.women[0].elapsed_time)}
+                    {
+						(clubXoms.women.length > 0) && secondsToMinutes(clubXoms.women[0].elapsed_time)
+					}
+					{
+						(clubXoms.women.length == 0) && "N/A"
+					}
                 </span>
             </div>
             <HR />

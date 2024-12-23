@@ -118,5 +118,7 @@ export const ResultsDataProvider = ({
 };
 
 export const useResultsDataContext = (): ResultsDataCtx => {
+	console.log("Getting data context");
+	// console.log("Returning data " + ResultsDataContext);
     return React.useContext(ResultsDataContext);
 };
