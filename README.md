@@ -2,7 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Deploy (Jackson's Notes)
 
-Need to set keys: there is a maps API key that needs to be set.
+Need to set keys: there is a maps API key that needs to be set. (need to set the env variables in here: next.config.js) -- those can be done in the vercel
+config.
 
 ## Getting Started
 

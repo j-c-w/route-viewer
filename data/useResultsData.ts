@@ -9,7 +9,7 @@ const queryOptions = {
 };
 
 export function useResultsData(resultsName: string) {
-    const url = `http://localhost:3000/rides/${resultsName}.json`;
+    const url = `https://raw.githubusercontent.com/j-c-w/hillz_data/refs/heads/main/2024/${resultsName}.json`;
 	console.log('data url is ' + url);
 
     return useQuery<RideEfforts, Error>(
