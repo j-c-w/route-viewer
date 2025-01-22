@@ -195,9 +195,18 @@ function tallyResultsByRider(results: RideEfforts, gc: GeneralClassification) {
 function determineRiderOfTheDay(resultsByRider: Record<string, RiderStats>) {
     const arr = Object.values(resultsByRider);
 
-    return arr
+    const result = arr
         .filter((rider) => rider.completedRide)
         .sort((a, b) => b.rideScore - a.rideScore)[0];
+	if (result) {
+		return result;
+	} else {
+		return {
+			name: 'No Rider of the Day',
+			prs: 0, top10s:0, clubXoms:0, xoms:0, segments:0,
+			riderId:0
+		}
+	}
 }
 
 function determineClubXoms(results: RideEfforts) {
