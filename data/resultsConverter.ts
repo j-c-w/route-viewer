@@ -377,6 +377,7 @@ export function resultsConverter(results: RideEfforts): TalliedRideEfforts {
 
     const gc = determineGC(results);
     const talliedResultsByRider = tallyResultsByRider(results, gc);
+	console.log(JSON.stringify(talliedResultsByRider));
 
     return {
         stats: {
