@@ -204,7 +204,8 @@ function determineRiderOfTheDay(resultsByRider: Record<string, RiderStats>) {
 		return {
 			name: 'No Rider of the Day',
 			prs: 0, top10s:0, clubXoms:0, xoms:0, segments:0,
-			riderId:0
+			riderId:0, athlete_link: 'No Link', 
+			id: 'none', completedRide: false, rideScore: 0, gcRank: 0
 		}
 	}
 }
