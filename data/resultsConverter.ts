@@ -213,11 +213,11 @@ function determineClubXoms(results: RideEfforts) {
     for (const segmentId of results.segmentsInOrder) {
         const segment: RideSegment = results.segments[segmentId];
 		var clubXomMan = "noXom";
-		if (segment.clubXoms.men.length > 0) {
+		if ('clubXoms' in segment && segment.clubXoms.men.length > 0) {
 			clubXomMan = segment.clubXoms.men[0].segment_effort_id;
 		}
 		var clubXomWoman = "noXom";
-		if (segment.clubXoms.women.length > 0) {
+		if ('clubXoms' in segment && segment.clubXoms.women.length > 0) {
 			clubXomWoman = segment.clubXoms.women[0].segment_effort_id;
 		}
 
